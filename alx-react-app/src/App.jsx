@@ -1,3 +1,6 @@
+import Header from './Header';
+import MainContent from './MainContent';
+import Footer from './Footer';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -7,8 +10,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
+    <header>
+      <h1>My Favourite Cities</h1>
+      </header>
+    );
+}
+export default Header;
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
