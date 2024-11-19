@@ -1,21 +1,36 @@
-import Header from './Header';
-import MainContent from './MainContent';
-import Footer from './Footer';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from './components/Header';  
+import MainContent from './components/MainContent';
+import Footer from './components/Footer'; 
+
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  return (
+    <div>
+       <Header />  {/* My Favourite Cities */}
+      <MainContent />  {/* I love to visit New York, Paris, and Tokyo */}
+      <Footer />  {/* @2023 City Lovers */}
+    </div>
+  );
+}
+     <header>
+  <h1>My Favorite Cities</h1>
+</header>
+      return (
+    <main>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
+    </main>
+}
+
+function App() {
+  const [count, setCount] = useState(0);
 
   return (
-    <header>
-      <h1>My Favourite Cities</h1>
-      </header>
-    );
-}
-export default Header;
+    <>
+      <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -36,14 +51,28 @@ export default Header;
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
-import WelcomeMessage from "./components/WelcomeMessage";
+import React from "react";
+import WelcomeMessage from "./WelcomeMessage"; // import the new component
+
 function App() {
   return (
     <div>
-      <WelcomeMessage />
+      <WelcomeMessage /> {/* Add the WelcomeMessage component here */}
     </div>
+    import React from 'react';
+function Footer() {
+  return (
+    <footer>
+      <p>© 2023 City Lovers</p>
+    </footer>
+  );
+}
+
+export default Footer;
+
+  );
   );
 }
 
