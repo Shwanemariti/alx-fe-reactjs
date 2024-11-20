@@ -37,8 +37,51 @@ const App = () => {
     </div>
   );
 };
+import React, { useEffect } from 'react';
+import { useRecipeStore } from './store/recipeStore';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+
+const App = () => {
+  const recipes = useRecipeStore(state => state.recipes);
+  const addFavorite = useRecipeStore(state => state.addFavorite);
+  const removeFavorite = useRecipeStore(state => state.removeFavorite);
+
+  useEffect(() => {
+    // Example data to simulate recipe fetching
+    useRecipeStore.setState({
+      recipes: [
+        { id: 1, title: 'Spaghetti Carbonara', description: 'A classic Italian pasta dish' },
+        { id: 2, title: 'Chicken Alfredo', description: 'Creamy pasta with chicken' },
+        { id: 3, title: 'Salmon Salad', description: 'Fresh salmon with greens' }
+      ]
+    });
+  }, []);
+
+  return (
+    <div>
+      <h1>Recipe Sharing App</h1>
+      
+      <div>
+        <h2>Recipes</h2>
+        {recipes.map(recipe => (
+          <div key={recipe.id}>
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+            <button onClick={() => addFavorite(recipe.id)}>Add to Favorites</button>
+            <button onClick={() => removeFavorite(recipe.id)}>Remove from Favorites</button>
+          </div>
+        ))}
+      </div>
+
+      <FavoritesList />
+      <RecommendationsList />
+    </div>
+  );
+};
 
 export default App;
+
 
 
 
