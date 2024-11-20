@@ -99,6 +99,17 @@ export default Footer;
   );
   );
 }
+function App() {
+  return (
+    <div>
+      <h1 style={{ textAlign: 'center', margin: '20px' }}>Counter Application</h1>
+      <Counter />
+    </div>
+  );
+}
 
 export default App;
+
+
+
 
