@@ -1,9 +1,25 @@
-import { create } from 'zustand';
+import useRecipeStore from '../recipeStore';
 
-const useRecipeStore = create((set) => ({
-  recipes: [],
-  addRecipe: (newRecipe) => set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-  setRecipes: (recipes) => set({ recipes }), // This line ensures setRecipes is available.
-}));
+const RecipeList = () => {
+  // Access the recipes from the Zustand store
+  const recipes = useRecipeStore((state) => state.recipes);
 
-export default useRecipeStore;
+  return (
+    <div>
+      <h2>Recipe List</h2>
+      {recipes.length === 0 ? (
+        <p>No recipes available. Add one!</p>
+      ) : (
+        recipes.map((recipe) => (
+          <div key={recipe.id}>
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};
+
+export default RecipeList;
+
