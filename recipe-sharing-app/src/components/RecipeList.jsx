@@ -1,7 +1,6 @@
 import useRecipeStore from '../recipeStore';
 
 const RecipeList = () => {
-  // Access the recipes from the Zustand store
   const recipes = useRecipeStore((state) => state.recipes);
 
   return (
