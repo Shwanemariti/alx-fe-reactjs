@@ -1,3 +1,4 @@
+import link from 'react-router-dom';
 import useRecipeStore from '../recipeStore';
 
 const RecipeList = () => {
@@ -23,15 +24,18 @@ import React, { useEffect } from 'react';
 import { useRecipeStore } from './recipeStore';
 
 const RecipeList = () => {
-  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
-  const recipes = useRecipeStore((state) => state.recipes);
+  const { recipes, filteredRecipes, filteredRecipes } = useRecipeStore((state) =>({
+    recipes: state.recipes,
+  filteredRecipes: state.filteredRecipes,
+  filterRecipes: state.filterRecipes,
+  }));
 
-  // If there are no filtered recipes, show all recipes by default
+  // filter recipes whenever the search term changes
   useEffect(() => {
-    if (filteredRecipes.length === 0 && recipes.length > 0) {
-      useRecipeStore.getState().filterRecipes(); // Perform initial filtering
-    }
-  }, [recipes, filteredRecipes]);
+    filteredRecipes();
+  }, [filterRecipes]);
+
+  const recipesToDisplay = FILTEREDrecipes.length > 0 ? FilteredRecipes : recipes;
 
   return (
     <div>
