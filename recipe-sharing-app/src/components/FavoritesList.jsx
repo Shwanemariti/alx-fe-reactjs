@@ -1,4 +1,4 @@
-// src/components/FavoritesList.jsx
+
 import React from 'react';
 import { useRecipeStore } from '../store/recipeStore';
 
