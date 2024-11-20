@@ -1,30 +1,21 @@
 {
   "name": "alx-react-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "version": "1.0.0",
+  "main": "src/index.js",
   "dependencies": {
-   "dependencies": {
+   "react": "618.2.0",
+    "react-dom": "^18.2.0",
   "react-router-dom": "^6.0.0", // version may vary
-  // other dependencies
-}
+  "zustand": "^4.2.0"
   },
-  "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.13.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "globals": "^15.11.0",
-    "vite": "^5.4.10"
-  }
+"devDependencies": {
+  "vite": "^4.1.0"
+  },
+"scripts": {
+  "dev": "vite",
+ "build": "vite build",
+  "serve": "vite preview"
+}'
+  "author": ""
+  "license": "ISC"
 }
