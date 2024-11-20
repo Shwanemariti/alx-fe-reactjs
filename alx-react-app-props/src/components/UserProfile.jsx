@@ -1,13 +1,15 @@
-import React from 'react';
+import { useContext } from 'react';
+import UserContext from '../UserContext'; // Adjust path if necessary
 
-const UserProfile = (props) => {
+function UserDetails() {
+  const userData = useContext(UserContext);
+
   return (
     <div>
-      <h2>{props.name}</h2>  {/* Display the user's name */}
-      <p>Age: {props.age}</p>  {*/ Display the user's age */}
-      <p>Bio: {props.bio}</p>  {*/ Display the user's bio */}
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
     </div>
   );
-};
+}
 
 export default UserProfile;
