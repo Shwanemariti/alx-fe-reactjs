@@ -1,18 +1,33 @@
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+  const navbarStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#333',
+    padding: '10px',
+    color: 'white',
+  };
+
+  const linkStyle = {
+    margin: '0 15px',
+    color: 'white',
+    textDecoration: 'none',
+  };
+
   return (
-    <nav style={{ padding: '10px', backgroundColor: '#333', color: 'white' }}>
-      <Link to="/" style={{ margin: '10px', color: 'white', textDecoration: 'none' }}>
+    <nav style={navbarStyle}>
+      <Link to="/" style={linkStyle}>
         Home
       </Link>
-      <Link to="/about" style={{ margin: '10px', color: 'white', textDecoration: 'none' }}>
+      <Link to="/about" style={linkStyle}>
         About
       </Link>
-      <Link to="/services" style={{ margin: '10px', color: 'white', textDecoration: 'none' }}>
+      <Link to="/services" style={linkStyle}>
         Services
       </Link>
-      <Link to="/contact" style={{ margin: '10px', color: 'white', textDecoration: 'none' }}>
+      <Link to="/contact" style={linkStyle}>
         Contact
       </Link>
     </nav>
