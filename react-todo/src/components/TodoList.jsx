@@ -48,16 +48,3 @@ describe('TodoList Component', () => {
     expect(firstTodo).not.toBeInTheDocument();
   });
 });
-const TodoList = ({ tasks, onRemove }) => {
-  return (
-    <ul>
-      {tasks.map((task, index) => (
-        <li key={index}>
-          {task}
-          <button onClick={() => onRemove(index)}>Remove</button>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
