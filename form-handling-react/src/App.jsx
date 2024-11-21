@@ -1,35 +1,87 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import BrowserRouter as Router, Route, Routes from 'react-router-dom';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeList from './components/RecipeList';
+import RecipeDetails from './components/RecipeDetails';
 
 function App() {
-  const [count, setCount] = useState(0)
+  return (
+    <Router>
+      <div>
+        <h1>Recipe Sharing App</h1>
+        {/* Add Recipe Form */}
+        <AddRecipeForm />
+
+        {/* Recipe List */}
+        <h2>Recipe List</h2>
+        <RecipeList />
+
+        {/* Routes for Recipe Details */}
+        <Routes>
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+import React from 'react';
+import SearchBar from './components/SearchBar';
+import RecipeList from './components/RecipeList';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Recipe Sharing App</h1>
+      <SearchBar />
+      <RecipeList />
+    </div>
+  );
+};
+import React, { useEffect } from 'react';
+import { useRecipeStore } from './store/recipeStore';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+
+const App = () => {
+  const recipes = useRecipeStore(state => state.recipes);
+  const addFavorite = useRecipeStore(state => state.addFavorite);
+  const removeFavorite = useRecipeStore(state => state.removeFavorite);
+
+  useEffect(() => {
+    // Example data to simulate recipe fetching
+    useRecipeStore.setState({
+      recipes: [
+        { id: 1, title: 'Spaghetti Carbonara', description: 'A classic Italian pasta dish' },
+        { id: 2, title: 'Chicken Alfredo', description: 'Creamy pasta with chicken' },
+        { id: 3, title: 'Salmon Salad', description: 'Fresh salmon with greens' }
+      ]
+    });
+  }, []);
 
   return (
-    <>
+    <div>
+      <h1>Recipe Sharing App</h1>
+      
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h2>Recipes</h2>
+        {recipes.map(recipe => (
+          <div key={recipe.id}>
+            <h3>{recipe.title}</h3>
+            <p>{recipe.description}</p>
+            <button onClick={() => addFavorite(recipe.id)}>Add to Favorites</button>
+            <button onClick={() => removeFavorite(recipe.id)}>Remove from Favorites</button>
+          </div>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <FavoritesList />
+      <RecommendationsList />
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
