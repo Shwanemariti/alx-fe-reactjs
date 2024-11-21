@@ -51,6 +51,19 @@ function App() {
     </Router>
   );
 }
+// src/App.jsx
+import React from 'react';
+import TodoList from './components/TodoList';  // Import TodoList component
+import './App.css';  // Your CSS file if needed
+
+function App() {
+  return (
+    <div className="App">
+      <TodoList />  {/* Render the TodoList component */}
+    </div>
+  );
+}
 
 export default App;
+
 
