@@ -63,6 +63,27 @@ function App() {
      </div>
   );
 };
+// src/App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BlogPost from './components/BlogPost';  // Import BlogPost component
+import Home from './components/Home'; // Example Home component (optional)
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Define the Home route */}
+        <Route path="/" element={<Home />} />
+
+        {/* Define the dynamic route for blog post */}
+        <Route path="/blog/:id" element={<BlogPost />} />
+      </Routes>
+    </Router>
+  );
+}
+
 
 export default Profile;
 
