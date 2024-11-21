@@ -31,24 +31,36 @@ function App() {
     </>
   )
 }
+// src/App.jsx
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import BlogPost from './components/BlogPost';  // Import BlogPost component
-import Home from './components/Home'; // Example Home component (optional)
+import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
+import Home from './components/Home';
+import Profile from './components/Profile';
+import Login from './components/Login';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Define the Home route */}
+        {/* Public Route */}
         <Route path="/" element={<Home />} />
 
-        {/* Define the dynamic route for blog post */}
-        <Route path="/blog/:id" element={<BlogPost />} />
-      </Routes>
-    </Router>
+        {/* Login Route */}
+        <Route path="/login" element={<Login />} />
 
-    </div>
+        {/* Protected Route */}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+     </div>
   );
 };
 
