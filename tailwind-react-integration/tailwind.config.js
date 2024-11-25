@@ -8,7 +8,14 @@ export default {
 }
 module.exports = {
   content: [
-    './src/**/*.{html,js,jsx,ts,tsx}', // Specify where Tailwind should look for classes
+    './src/**/*.{html,js,jsx,ts,tsx}', // Adjust paths based on your project structure
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
   ],
 }
 module.exports = {
