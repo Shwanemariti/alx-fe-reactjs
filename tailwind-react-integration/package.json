@@ -9,9 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+ "devDependencies": {
+  "tailwindcss": "^x.x.x",
+  "postcss": "^x.x.x",
+  "autoprefixer": "^x.x.x"
+}
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -26,8 +28,4 @@
     "vite": "^5.4.10"
   }
 }
-"devDependencies": {
-  "tailwindcss": "^x.x.x",
-  "postcss": "^x.x.x",
-  "autoprefixer": "^x.x.x"
-}
+
