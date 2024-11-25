@@ -30,8 +30,7 @@ module.exports = {
 }
 module.exports = {
   purge: [
-    './src/**/*.{html,js,jsx,ts,tsx}',
-  ],
+    './src/**/*.{html,js,jsx,ts,tsx}', // Paths to your templates
   theme: {
     extend: {},
   },
