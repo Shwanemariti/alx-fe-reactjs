@@ -1,5 +1,4 @@
-module.exports = {
-  content: [
-    './src/**/*.{html,js,jsx,ts,tsx}',
-  ],
-};
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
