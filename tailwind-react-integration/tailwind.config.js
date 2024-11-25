@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  purge: [],
   theme: {
     extend: {},
   },
   plugins: [],
 }
 module.exports = {
-  content: [
+  purge: [
     './src/**/*.{html,js,jsx,ts,tsx}', // Adjust paths based on your project structure
   ],
   theme: {
@@ -29,7 +29,7 @@ module.exports = {
   },
 }
 module.exports = {
-  content: [
+  purge: [
     './src/**/*.{html,js,jsx,ts,tsx}',
   ],
   theme: {
