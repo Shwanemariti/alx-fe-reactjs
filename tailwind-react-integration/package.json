@@ -14,6 +14,9 @@
   "postcss": "^x.x.x",
   "autoprefixer": "^x.x.x"
 }
+  "scripts": {
+  "build:css": "tailwindcss build src/styles.css -o dist/styles.css"
+}
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
