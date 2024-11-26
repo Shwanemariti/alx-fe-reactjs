@@ -1,7 +1,7 @@
 import React from "react";
 const UserProfile = () => {
   return (
-    <div className="bg-gray-100 flex flex-col items-center:p-8 sm:p-4 md:p-8 max-w-xs md:max-w-sm sm:max-w-md mx-auto rounded-lg shadow-md">
+    <div className="bg-gray-100 flex flex-col items-center:p-8 sm:p-4 md:p-8 max-w-xs md:max-w-sm sm:max-w-md mx-auto my-20 rounded-lg shadow-md">
       {/* Profile Image */}
       <img
         src="https://via.placeholder.com/150"
@@ -22,7 +22,7 @@ import React from "react";
 
 const UserProfile = () => {
   return (
-    <div className="bg-gray-100 flex flex-col items-center p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
+    <div className="bg-gray-100 flex flex-col items-center p-4 sm:p-6 md:p-8 max-w-xs sm:max-w-sm md:max-w-md mx-auto my-20 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out">
       {/* Profile Image */}
       <img
         src="https://via.placeholder.com/150"
