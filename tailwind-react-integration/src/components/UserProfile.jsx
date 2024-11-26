@@ -11,7 +11,7 @@ const UserProfile = () => {
       />
 
       {/* User Info */}
-      <h1 className="mt-4 text-lg md:text-xl md:text-2xl font-semibold text-gray-800 transition-colors duration-300 ease-in-out hover:text-blue-500">
+      <h1 className="mt-4 text-lg md:text-xl text-blue-800 my-4 hover:text-blue-500 transition-colors duration md:text-2xl font-semibold text-gray-800 transition-colors duration-300 ease-in-out hover:text-blue-500">
         John Doe
       </h1>
       <p className="mt-2 text-sm sm:text-base md:text-lg text-gray-600 text-center">
