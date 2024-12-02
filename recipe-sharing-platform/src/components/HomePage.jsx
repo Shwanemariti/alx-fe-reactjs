@@ -41,5 +41,16 @@ const HomePage = () => {
     </div>
   );
 };
+import { Link } from 'react-router-dom';
+
+// Inside HomePage Component
+<div className="text-center mt-6">
+  <Link
+    to="/add-recipe"
+    className="text-white bg-blue-500 py-2 px-4 rounded-lg hover:bg-blue-600"
+  >
+    Add a New Recipe
+  </Link>
+</div>;
 
 export default HomePage;
