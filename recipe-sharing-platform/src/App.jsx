@@ -41,5 +41,14 @@ function App() {
     </div>
   );
 }
+function App() {
+  return (
+    <div className="text-blue-500 text-center">
+      <h1>Recipe Sharing Platform</h1>
+      <p>Welcome to your React and Tailwind CSS setup!</p>
+    </div>
+  );
+}
 
 export default App;
+
