@@ -5,6 +5,7 @@ function Search({ onSearch }) {
 
   const handleInputChange = (e) => {
     setUsername(e.target.value);
+      setError('Looks like we can’t find the user.');
   };
 
   const handleSubmit = (e) => {
