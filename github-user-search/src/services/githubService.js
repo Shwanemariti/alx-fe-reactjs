@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com';
+const BASE_URL = ('https://api.github.com/search/user?q=${query}');
 
 /**
  * Fetches GitHub users based on the search query.
