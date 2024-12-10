@@ -10,7 +10,7 @@ function Search({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.trim()) {
-      onSearch(username);
+      onSearch(username); // Pass the username to the parent component
     }
   };
 
