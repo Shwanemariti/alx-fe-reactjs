@@ -31,5 +31,20 @@ function App() {
     </>
   )
 }
+import React from 'react';
 
-export default App
+function App() {
+  return (
+    <div>
+      <header>
+        <h1>GitHub User Search</h1>
+      </header>
+      <main>
+        <p>Welcome to the GitHub User Search Application!</p>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+
