@@ -88,6 +88,61 @@ function Search({ onSearch }) {
     </form>
   );
 }
+import React, { useState } from 'react';
+import { fetchUserData } from '../services/githubService';
+
+const Search = () => {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await fetchUserData(query);
+      setResults(data.items || []); // Assume `items` contains user data for search results
+    } catch (err) {
+      setError('Looks like we can’t find the user.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search GitHub Users"
+          className="border p-2"
+        />
+        <button type="submit" className="bg-blue-500 text-white p-2 ml-2">
+          Search
+        </button>
+      </form>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {results.length > 0 && (
+        <ul>
+          {results.map((user) => (
+            <li key={user.id}>
+              <img src={user.avatar_url} alt={user.login} className="w-10 h-10 rounded-full" />
+              <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+                {user.login}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export default Search;
+
 
